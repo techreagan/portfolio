@@ -1,0 +1,21 @@
+// Ref: https://github.com/nuxt-community/vuetify-module#customvariables
+//
+// The variables you want to modify
+// $font-size-root: 20px;
+
+$body-font-family: 'Poppins', 'sans-serif' !default;
+
+$material-dark: map-deep-merge(
+  (
+    // 'status-bar': (
+    //   'regular': map-get($shades, 'black'),
+    //   'lights-out': rgba(map-get($shades, 'black'), 0.2)
+    // ),
+    // 'app-bar': map-get($material-dark-elevation-colors, '4'),
+    // 'background': #121212,
+    'background': #ffffff,
+    'surface': #ffffff
+      // 'bottom-navigation': map-get($material-dark-elevation-colors, '8'),
+    // 'surface': #121212,
+  )
+);
