@@ -21,6 +21,11 @@ export default {
           'https://fonts.googleapis.com/css2?family=Poppins:wght@400;500&display=swap',
         rel: 'stylesheet',
       },
+      {
+        href:
+          'https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600&display=swap',
+        rel: 'stylesheet',
+      },
     ],
   },
 
@@ -53,11 +58,23 @@ export default {
   // Vuetify module configuration (https://go.nuxtjs.dev/config-vuetify)
   vuetify: {
     customVariables: ['~/assets/variables.scss'],
+    treeShake: true,
+    defaultAssets: {
+      font: {
+        family: 'Poppins',
+      },
+      icons: 'mdi',
+    },
     theme: {
+      options: {
+        customProperties: true,
+      },
       dark: true,
       themes: {
         dark: {
+          background: '#101024',
           primary: '#f3bc17',
+          // 'bg-secondary': '#121227',
           // accent: colors.grey.darken3,
           // secondary: colors.amber.darken3,
           info: colors.teal.lighten1,

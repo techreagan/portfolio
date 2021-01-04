@@ -1,6 +1,6 @@
 <template>
   <v-app app>
-    <v-navigation-drawer
+    <!-- <v-navigation-drawer
       v-model="drawer"
       :mini-variant="miniVariant"
       :clipped="clipped"
@@ -23,23 +23,27 @@
           </v-list-item-content>
         </v-list-item>
       </v-list>
-    </v-navigation-drawer>
-    <v-app-bar :clipped-left="clipped" fixed app>
-      <v-app-bar-nav-icon @click.stop="drawer = !drawer" />
-      <v-btn icon @click.stop="miniVariant = !miniVariant">
-        <v-icon>mdi-{{ `chevron-${miniVariant ? 'right' : 'left'}` }}</v-icon>
-      </v-btn>
-      <v-btn icon @click.stop="clipped = !clipped">
-        <v-icon>mdi-application</v-icon>
-      </v-btn>
-      <v-btn icon @click.stop="fixed = !fixed">
-        <v-icon>mdi-minus</v-icon>
-      </v-btn>
-      <v-toolbar-title v-text="title" />
-      <v-spacer />
-      <v-btn icon @click.stop="rightDrawer = !rightDrawer">
-        <v-icon>mdi-menu</v-icon>
-      </v-btn>
+    </v-navigation-drawer> -->
+    <v-app-bar :clipped-left="clipped" elevate-on-scroll dense fixed app>
+      <v-container class="py-0 fill-height">
+        <v-toolbar-title v-text="title" />
+        <v-spacer />
+        <v-btn
+          v-for="link in links"
+          :key="link"
+          text
+          class="hidden-sm-and-down"
+        >
+          {{ link }}
+        </v-btn>
+        <v-btn
+          icon
+          class="hidden-md-and-up"
+          @click.stop="rightDrawer = !rightDrawer"
+        >
+          <v-icon>mdi-menu</v-icon>
+        </v-btn>
+      </v-container>
     </v-app-bar>
     <v-main>
       <v-container>
@@ -64,11 +68,13 @@
 
 <script>
 export default {
+  // components: true,
   data() {
     return {
       clipped: false,
-      drawer: false,
+      drawer: true,
       fixed: false,
+      links: ['Home', 'Projects', 'Skills', 'About', 'Contact'],
       items: [
         {
           icon: 'mdi-apps',
@@ -84,8 +90,14 @@ export default {
       miniVariant: false,
       right: true,
       rightDrawer: false,
-      title: 'Vuetify.js',
+      title: 'Tech Reagan',
     }
   },
 }
 </script>
+
+<style>
+.theme--dark.v-application .text--primary {
+  color: #f3bc17 !important;
+}
+</style>
