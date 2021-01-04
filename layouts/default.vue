@@ -32,6 +32,7 @@
           v-for="link in links"
           :key="link"
           text
+          :to="`#${link}`"
           class="hidden-sm-and-down"
         >
           {{ link }}
@@ -46,9 +47,7 @@
       </v-container>
     </v-app-bar>
     <v-main>
-      <v-container>
-        <nuxt />
-      </v-container>
+      <nuxt />
     </v-main>
     <v-navigation-drawer v-model="rightDrawer" :right="right" temporary fixed>
       <v-list>

@@ -77,6 +77,7 @@ export default {
           // 'bg-secondary': '#121227',
           // accent: colors.grey.darken3,
           // secondary: colors.amber.darken3,
+          secondary: '#121227',
           info: colors.teal.lighten1,
           warning: colors.amber.base,
           error: colors.deepOrange.accent4,
