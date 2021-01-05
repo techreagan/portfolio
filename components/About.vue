@@ -1,26 +1,30 @@
 <template>
-  <div id="skills" class="py-8">
-    <h2 class="text-center text--primary">SKILLS</h2>
+  <div id="about" class="py-8">
     <v-container>
-      <v-row>
+      <v-row class="my-3">
+        <v-col cols="12" sm="12" md="5" lg="5">
+          <div class="text-left">
+            <v-img
+              :src="require('~/assets/img/2.jpg')"
+              aspect-ratio="1.3"
+              max-height="300"
+            ></v-img>
+          </div>
+        </v-col>
         <v-col
-          v-for="(skill, key) in skills"
-          :key="key"
-          class="d-flex child-flex"
+          offset-md="1"
+          offset-lg="1"
           cols="12"
-          xs="12"
-          sm="6"
-          md="4"
+          sm="12"
+          md="6"
+          lg="6"
+          class=""
         >
-          <v-card class="secondary text-center">
-            <v-icon class="py-5">{{ skill.icon }}</v-icon>
-            <p class="text-center text--primary mb-0 font-weight-medium">
-              {{ skill.title }}
-            </p>
-            <v-card-text class="pt-0">
-              {{ skill.description }}
-            </v-card-text>
-          </v-card>
+          <h2 class="text--primary">ABOUT</h2>
+          <p class="mb text--primary">Software & Network Engineer</p>
+
+          <p>I'm Reagan Ekhamaye a.k.a Tech Reagan, I hold two degrees</p>
+          <v-btn class="primary black--text" small>Download CV</v-btn>
         </v-col>
       </v-row>
     </v-container>

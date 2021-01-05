@@ -23,21 +23,18 @@
         </p>
         <v-btn class="primary black--text" small>Hire Me</v-btn>
         <section class="mt-15">
-          <v-btn class="mr-2" fab outlined x-small color="white">
-            <v-icon size="10"> mdi-github </v-icon>
-          </v-btn>
-          <v-btn class="mr-2" fab outlined x-small color="white">
-            <v-icon size="10"> mdi-youtube </v-icon>
-          </v-btn>
-          <v-btn class="mr-2" fab outlined x-small color="white">
-            <v-icon size="10"> mdi-linkedin </v-icon>
-          </v-btn>
-          <v-btn class="mr-2" fab outlined x-small color="white">
-            <v-icon size="10"> mdi-twitter </v-icon>
-          </v-btn>
-
-          <v-btn class="" fab outlined x-small color="white">
-            <v-icon size="10"> mdi-facebook </v-icon>
+          <v-btn
+            v-for="social in socialLinks"
+            :key="social.link"
+            :href="social.link"
+            target="_blank"
+            class="mr-2"
+            fab
+            outlined
+            x-small
+            color="white"
+          >
+            <v-icon size="12"> {{ social.icon }}</v-icon>
           </v-btn>
         </section>
       </v-col>
@@ -62,3 +59,34 @@
     </v-row>
   </v-container>
 </template>
+
+<script>
+export default {
+  data() {
+    return {
+      socialLinks: [
+        {
+          link: 'https://github.com/techreagan',
+          icon: 'mdi-github',
+        },
+        {
+          link: 'https://youtube.com/techreagan',
+          icon: 'mdi-youtube',
+        },
+        {
+          link: 'https://linkedin/in/techreagan',
+          icon: 'mdi-linkedin',
+        },
+        {
+          link: 'https://twitter.com/techreagan',
+          icon: 'mdi-twitter',
+        },
+        {
+          link: 'https://facebook.com/techreagan',
+          icon: 'mdi-facebook',
+        },
+      ],
+    }
+  },
+}
+</script>

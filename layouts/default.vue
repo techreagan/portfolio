@@ -28,15 +28,18 @@
       <v-container class="py-0 fill-height">
         <v-toolbar-title v-text="title" />
         <v-spacer />
-        <v-btn
-          v-for="link in links"
-          :key="link"
-          text
-          :to="`#${link}`"
-          class="hidden-sm-and-down"
-        >
-          {{ link }}
-        </v-btn>
+        <scrollactive active-class="is-active" bezier-easing-value=".5,0,1,1">
+          <v-btn
+            v-for="link in links"
+            :key="link"
+            text
+            :href="`#${link}`"
+            class="hidden-sm-and-down scrollactive-item"
+            nuxt
+          >
+            {{ link }}
+          </v-btn>
+        </scrollactive>
         <v-btn
           icon
           class="hidden-md-and-up"
@@ -73,7 +76,7 @@ export default {
       clipped: false,
       drawer: true,
       fixed: false,
-      links: ['Home', 'Projects', 'Skills', 'About', 'Contact'],
+      links: ['home', 'projects', 'skills', 'youtube', 'about', 'contact'],
       items: [
         {
           icon: 'mdi-apps',
