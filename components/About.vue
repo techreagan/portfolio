@@ -23,7 +23,20 @@
           <h2 class="text--primary">ABOUT</h2>
           <p class="mb text--primary">Software & Network Engineer</p>
 
-          <p>I'm Reagan Ekhamaye a.k.a Tech Reagan, I hold two degrees</p>
+          <p>
+            I'm Reagan Ekhamaye a.k.a Tech Reagan, A full stack developer but
+            specialize in backend development with three(3) years of experience
+            in the field. I'm a problem solver and can deliver under pressure.
+          </p>
+          <p>
+            I hold two degrees, Economics and Communication & Information
+            Technology (CIT). I'm also a Cisco Certified Network Associate
+            (CCNA) A Network Engineer.
+          </p>
+          <p>
+            I'm passionate about programming and teaching/helping people write
+            their first line of code.
+          </p>
           <v-btn class="primary black--text" small>Download CV</v-btn>
         </v-col>
       </v-row>
