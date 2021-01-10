@@ -1,7 +1,7 @@
 <template>
   <div id="contact" class="py-8 secondary">
     <h2 class="text-center text--primary">CONTACT</h2>
-    <p class="text-center">
+    <p class="text-center px-3">
       Let's make something great, feel free to reach out to me, I will reply
       ASAP.
     </p>
@@ -19,15 +19,15 @@
           >
             <v-icon size="20"> {{ social.icon }}</v-icon>
           </v-btn>
-          <p>
+          <div>
             <v-btn
               href="malito:techreagan2@gmail.com"
               text
-              class="text-lowercase headline mt-6"
+              class="text-lowercase headline mt-6 text-sm-h5 text-h6"
             >
               techreagan2@gmail.com</v-btn
             >
-          </p>
+          </div>
         </v-col>
       </v-row>
     </v-container>
