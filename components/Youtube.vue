@@ -8,7 +8,7 @@
     <v-container>
       <v-row>
         <v-col
-          v-for="(skill, key) in skills"
+          v-for="(video, key) in videos"
           :key="key"
           class="d-flex child-flex"
           cols="12"
@@ -16,15 +16,16 @@
           sm="6"
           md="4"
         >
-          <v-card class="secondary text-center">
-            <v-icon class="py-5">{{ skill.icon }}</v-icon>
-            <p class="text-center text--primary mb-0 font-weight-medium">
-              {{ skill.title }}
-            </p>
-            <v-card-text class="pt-0">
-              {{ skill.description }}
-            </v-card-text>
-          </v-card>
+          <!-- <v-responsive max-height="315px" max-width="100%"> -->
+          <iframe
+            width="100%"
+            height="auto"
+            :src="`https://www.youtube.com/embed/${video}`"
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen
+          ></iframe>
+          <!-- </v-responsive> -->
         </v-col>
       </v-row>
     </v-container>
@@ -35,25 +36,25 @@
 export default {
   data() {
     return {
-      skills: [
-        {
-          icon: 'mdi-desktop-mac-dashboard',
-          title: 'Frontend Development',
-          description:
-            'HTML, CSS, JavaScript, SASS, Vue JS, Nuxt JS, Vuetify JS',
-        },
-        {
-          icon: 'mdi-database',
-          title: 'Backend Development',
-          description: 'Node JS, PHP, MongoDB, MySQL, PostgreSQL, SQLite',
-        },
-        {
-          icon: 'mdi-server',
-          title: 'Dev OPS',
-          description: 'Docker',
-        },
-      ],
+      videos: [],
     }
+  },
+  async mounted() {
+    const channelData = await this.$axios.get(
+      `https://youtube.googleapis.com/youtube/v3/channels?part=snippet%2CcontentDetails%2Cstatistics&id=UCqOeeqoRUCEinRCYVRI4yTQ&key=${this.$config.apiSecret}`
+    )
+    const uploadId =
+      channelData.data.items[0].contentDetails.relatedPlaylists.uploads
+    const playlistData = await this.$axios.get(
+      `https://youtube.googleapis.com/youtube/v3/playlistItems?part=snippet&maxResults=6&playlistId=${uploadId}&key=${this.$config.apiSecret}`
+    )
+    const playlistItems = playlistData.data.items
+    // const videos = []
+    playlistItems.forEach((item) => {
+      this.videos.push(item.snippet.resourceId.videoId)
+    })
+    // console.log(videos)
+    // return { videos }
   },
 }
 </script>

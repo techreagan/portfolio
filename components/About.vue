@@ -4,11 +4,7 @@
       <v-row class="my-3">
         <v-col cols="12" sm="12" md="5" lg="5">
           <div class="text-left">
-            <v-img
-              :src="require('~/assets/img/2.jpg')"
-              aspect-ratio="1.3"
-              max-height="300"
-            ></v-img>
+            <v-img src="/img/2.jpg" aspect-ratio="1.3" max-height="300"></v-img>
           </div>
         </v-col>
         <v-col

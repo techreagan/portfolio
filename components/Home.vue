@@ -49,7 +49,7 @@
       >
         <div class="">
           <v-img
-            :src="require('~/assets/img/1.jpg')"
+            src="/img/1.jpg"
             aspect-ratio="1.3"
             contain
             max-height="300"

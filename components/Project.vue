@@ -17,8 +17,7 @@
               <v-img
                 :src="project.image"
                 :lazy-src="project.image"
-                aspect-ratio="1"
-                :class="`background transition-swing elevation-${
+                :class="`background px-5 transition-swing elevation-${
                   hover ? 24 : 6
                 }`"
                 style="cursor: pointer"
@@ -68,15 +67,19 @@
                 </v-responsive>
               </v-col>
               <v-col>
-                <h3>Title</h3>
-                <p>{{ projects[selectedProject].title }}</p>
+                <!-- <h3>Title</h3>
+                <p>{{ projects[selectedProject].title }}</p> -->
+                <h3>Technologies Used</h3>
+                <p>{{ projects[selectedProject].technologies }}</p>
                 <h3>Description</h3>
                 <p>{{ projects[selectedProject].description }}</p>
                 <v-btn
                   color="primary"
-                  :to="projects[selectedProject].githubURL"
+                  :href="projects[selectedProject].githubURL"
                   :disabled="!projects[selectedProject].githubURL"
                   class="ma-2 black--text"
+                  target="_blank"
+                  nuxt
                 >
                   <v-icon left dark> mdi-github </v-icon>
                   {{
@@ -84,6 +87,17 @@
                       ? 'Github'
                       : 'Private Repo'
                   }}
+                </v-btn>
+                <v-btn
+                  v-if="projects[selectedProject].link"
+                  color="primary"
+                  :href="projects[selectedProject].link.value"
+                  class="ma-2 black--text"
+                  target="_blank"
+                  nuxt
+                >
+                  <v-icon left dark> mdi-web </v-icon>
+                  {{ projects[selectedProject].link.text }}
                 </v-btn>
               </v-col>
             </v-row>
@@ -102,39 +116,57 @@ export default {
       selectedProject: 0,
       projects: [
         {
-          image: '/img/youtube-reagan-1.png',
+          image: '/img/youtube-reagan.png',
           title: 'Youtube Clone',
-          description: 'lorem lorem lorem lorem lorem lorem',
-          youtubeURL: 'https://www.youtube.com/embed/is2ZyZsI3ZM',
+          technologies:
+            'HTML, CSS, VueJS, VuetifyJS, NodeJS & MongoDB (MEVN Stack)',
+          description:
+            "I called it VueTube, the user interface (UI) is exactly like YouTube with features like subscriptions, upload videos (likes and dislike videos),comment & reply for videos, upload thumbnail etc. I don't have the project hosted, but I have the template preview, check below. For more, checkout the github repositories",
+          youtubeURL: 'https://www.youtube.com/embed/CDAy3Z1N6-w',
           githubURL: 'https://github.com/techreagan',
-          link: 'https://techreagan.com',
+          link: { text: 'Template Preview', value: 'https://techreagan.com' },
         },
         {
-          image: '/img/youtube-reagan-1.png',
+          image: '/img/attendance-and-continous-assessment-mgt-system.png',
           title: 'Attendance & Continous Assessment Management System',
-          description: 'lorem lorem lorem lorem lorem lorem',
-          youtubeURL: 'https://www.youtube.com/embed/is2ZyZsI3ZM',
-          githubURL: 'https://github.com/techreagan',
-          link: 'https://techreagan.com',
+          technologies:
+            'HTML, CSS, VueJS, Bootstrap, NodeJS & MongoDB (MEVN Stack)',
+          description:
+            "I'm a Lecturer in an University, I Built this system to help me take attendance, manage and print students continous assessment (records) in pdf format. Request for live preview",
+          youtubeURL: 'https://www.youtube.com/embed/XjZlzvWekDs',
+          githubURL: null,
+          link: null,
         },
         {
-          image: '/img/youtube-reagan-1.png',
+          image: '/img/online-examination.png',
           title: 'Online Examination System',
-          description: 'lorem lorem lorem lorem lorem lorem',
+          technologies: 'HTML, CSS, JavaScript, NodeJS & MongoDB',
+          description:
+            "An online examination management system where you can create questions for courses in different classes in the admin panel, while student takes the exam in the student panel as long as the countdown hasn't elapse ",
           youtubeURL: 'https://www.youtube.com/embed/is2ZyZsI3ZM',
-          githubURL: 'https://github.com/techreagan',
-          link: 'https://techreagan.com',
+          githubURL: null,
+          link: null,
         },
         {
-          image: '/img/youtube-reagan-1.png',
+          image: '/img/blog-app.png',
           title: 'Blog App',
-          description: 'lorem lorem lorem lorem lorem lorem',
+          technologies:
+            'HTML, CSS, VueJS, VuetifyJS, NuxtJs, NodeJS & MongoDB (MEVN Stack)',
+          description:
+            'A server rendered application built with nuxtjs, This blog has admin panel with authentication, fetch, create, edit and delete post in the admin panel',
           youtubeURL: 'https://www.youtube.com/embed/is2ZyZsI3ZM',
           githubURL: 'https://github.com/techreagan',
           link: 'https://techreagan.com',
         },
         {
-          image: '/img/youtube-reagan-1.png',
+          image: '/img/swap-gadgets.png',
+          title: 'Swap Gadgets',
+          technologies: 'HTML, CSS, JavaScript, MaterializeCSS, PHP & MySQL',
+          description:
+            'An online platform where you could easily swap phones, tablets, electronics, laptop, video games, cameras and more.',
+          youtubeURL: 'https://www.youtube.com/embed/is2ZyZsI3ZM',
+          githubURL: null,
+          link: { text: 'Live Preview', value: 'https://swapgadgets.com' },
         },
       ],
     }
