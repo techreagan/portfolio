@@ -55,6 +55,10 @@ export default {
   // Axios module configuration (https://go.nuxtjs.dev/config-axios)
   axios: {},
 
+  publicRuntimeConfig: {
+    apiSecret: process.env.GOOGLE_API_KEY,
+  },
+
   // Vuetify module configuration (https://go.nuxtjs.dev/config-vuetify)
   vuetify: {
     customVariables: ['~/assets/variables.scss'],
@@ -74,6 +78,7 @@ export default {
         dark: {
           background: '#101024',
           primary: '#f3bc17',
+          // primary: '#f0d13b',
           // 'bg-secondary': '#121227',
           // accent: colors.grey.darken3,
           // secondary: colors.amber.darken3,

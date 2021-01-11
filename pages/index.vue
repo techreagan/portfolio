@@ -15,6 +15,7 @@ export default {}
 
 <style>
 .is-active {
-  background-color: red;
+  color: #f3bc17 !important;
+  /* color: #f0d13b !important; */
 }
 </style>
