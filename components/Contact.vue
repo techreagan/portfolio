@@ -21,7 +21,8 @@
           </v-btn>
           <div>
             <v-btn
-              href="malito:techreagan2@gmail.com"
+              href="mailto:techreagan2@gmail.com"
+              nuxt
               text
               class="text-lowercase headline mt-6 text-sm-h5 text-h6"
             >
