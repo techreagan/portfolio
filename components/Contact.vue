@@ -49,7 +49,7 @@ export default {
           icon: 'mdi-youtube',
         },
         {
-          link: 'https://linkedin/in/techreagan',
+          link: 'https://linkedin.com/in/techreagan',
           icon: 'mdi-linkedin',
         },
         {
