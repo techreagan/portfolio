@@ -1,38 +1,16 @@
 <template>
   <v-app app>
-    <!-- <v-navigation-drawer
-      v-model="drawer"
-      :mini-variant="miniVariant"
-      :clipped="clipped"
-      fixed
-      app
-    >
-      <v-list>
-        <v-list-item
-          v-for="(item, i) in items"
-          :key="i"
-          :to="item.to"
-          router
-          exact
-        >
-          <v-list-item-action>
-            <v-icon>{{ item.icon }}</v-icon>
-          </v-list-item-action>
-          <v-list-item-content>
-            <v-list-item-title v-text="item.title" />
-          </v-list-item-content>
-        </v-list-item>
-      </v-list>
-    </v-navigation-drawer> -->
     <v-app-bar :clipped-left="clipped" elevate-on-scroll dense fixed app>
-      <v-container class="py-0 fill-height">
+      <v-container class="py-0 px-0 fill-height">
         <v-img
-          lazy-src="/img/tech-reagan-logo.png"
+          lazy-src="./img/tech-reagan-logo.png"
           max-width="50"
           class="mr-3"
-          src="/img/tech-reagan-logo.png"
+          alt="Tech Reagan's Logo"
+          title="Tech Reagan's Logo"
+          src="./img/tech-reagan-logo.png"
         ></v-img>
-        <v-toolbar-title v-text="title" />
+        <v-toolbar-title class="hidden-sm-and-down" v-text="title" />
         <v-spacer />
         <client-only>
           <scrollactive
@@ -71,7 +49,6 @@
       fixed
     >
       <v-list>
-        <!-- <v-list-item  @click.native="right = !right"> -->
         <client-only>
           <scrollactive
             active-class="is-active"
@@ -89,9 +66,6 @@
               nuxt
               @click="rightDrawer = !rightDrawer"
             >
-              <!-- <v-list-item-action>
-            <v-icon light> mdi-repeat </v-icon>
-          </v-list-item-action> -->
               <v-list-item-title class="text-capitalize">{{
                 link
               }}</v-list-item-title>
@@ -101,14 +75,15 @@
       </v-list>
     </v-navigation-drawer>
     <v-footer :absolute="!fixed" app>
-      <span>&copy; {{ new Date().getFullYear() }}</span>
+      <span class="text-caption"
+        >Copyright &copy; {{ new Date().getFullYear() }} Tech Reagan</span
+      >
     </v-footer>
   </v-app>
 </template>
 
 <script>
 export default {
-  // components: true,
   data() {
     return {
       clipped: false,

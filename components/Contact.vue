@@ -24,7 +24,7 @@
               href="mailto:techreagan2@gmail.com"
               nuxt
               text
-              class="text-lowercase headline mt-6 text-sm-h5 text-h6"
+              class="text-lowercase mt-6 text-sm-title text-md-h5"
             >
               techreagan2@gmail.com</v-btn
             >

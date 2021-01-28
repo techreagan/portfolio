@@ -4,7 +4,12 @@
       <v-row class="my-3">
         <v-col cols="12" sm="12" md="5" lg="5">
           <div class="text-left">
-            <v-img src="/img/2.jpg" aspect-ratio="1.3" max-height="300"></v-img>
+            <v-img
+              src="./img/about-pics.jpg"
+              alt="Tech Reagan Image"
+              aspect-ratio="1.3"
+              max-height="300"
+            ></v-img>
           </div>
         </v-col>
         <v-col
@@ -18,22 +23,29 @@
         >
           <h2 class="text--primary">ABOUT</h2>
           <p class="mb text--primary">Software & Network Engineer</p>
+          <p>
+            I'm Reagan Ekhameye a.k.a Tech Reagan. A full stack developer
+            though, I specialize in backend development. I have three(3) years
+            of experience in the field. I have my first degree in Economics, but
+            my zeal for coding made me get a second degree in Communication &
+            Information Technology (CIT). I'm a network engineer with a CCNA
+            (Cisco Certified network Associate)
+          </p>
 
           <p>
-            I'm Reagan Ekhamaye a.k.a Tech Reagan, A full stack developer but
-            specialize in backend development with three(3) years of experience
-            in the field. I'm a problem solver and can deliver under pressure.
+            I'm passionate about programming. A problem solver and deliver well
+            under pressure P.S I love teaching/helping people write their first
+            line of code
           </p>
-          <p>
-            I hold two degrees, Economics and Communication & Information
-            Technology (CIT). I'm also a Cisco Certified Network Associate
-            (CCNA) A Network Engineer.
-          </p>
-          <p>
-            I'm passionate about programming and teaching/helping people write
-            their first line of code.
-          </p>
-          <v-btn class="primary black--text" small>Download CV</v-btn>
+
+          <v-btn
+            class="primary black--text"
+            href="./cv/tech-reagan's-cv.pdf"
+            download
+            nuxt
+            small
+            >Download CV</v-btn
+          >
         </v-col>
       </v-row>
     </v-container>

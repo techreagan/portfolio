@@ -11,36 +11,36 @@
           xs="12"
           sm="6"
           md="4"
+          style="cursor: pointer"
         >
-          <v-hover>
-            <template v-slot:default="{ hover }">
-              <v-img
-                :src="project.image"
-                :lazy-src="project.image"
-                :class="`background px-5 transition-swing elevation-${
-                  hover ? 24 : 6
-                }`"
-                style="cursor: pointer"
-                @click="
-                  dialog = !dialog
-                  selectedProject = key
-                "
-              >
-                <template v-slot:placeholder>
-                  <v-row
-                    class="fill-height ma-0"
-                    align="center"
-                    justify="center"
-                  >
-                    <v-progress-circular
-                      indeterminate
-                      color="grey lighten-5"
-                    ></v-progress-circular>
-                  </v-row>
-                </template>
-              </v-img>
-            </template>
-          </v-hover>
+          <div @click="openDialog(key)">
+            <v-hover>
+              <template v-slot:default="{ hover }">
+                <v-img
+                  :src="project.image"
+                  :lazy-src="project.image"
+                  :alt="`Tech Reagan ${project.title} Project`"
+                  :class="`background px-5 transition-swing elevation-${
+                    hover ? 24 : 6
+                  }`"
+                  style="cursor: pointer"
+                >
+                  <template v-slot:placeholder>
+                    <v-row
+                      class="fill-height ma-0"
+                      align="center"
+                      justify="center"
+                    >
+                      <v-progress-circular
+                        indeterminate
+                        color="grey lighten-5"
+                      ></v-progress-circular>
+                    </v-row>
+                  </template>
+                </v-img>
+              </template>
+            </v-hover>
+          </div>
         </v-col>
       </v-row>
 
@@ -52,11 +52,11 @@
 
           <v-card-text>
             <v-row>
-              <v-col>
+              <v-col sm="12" md="6" lg="6" c0ls="12">
                 <v-responsive max-width="560">
                   <iframe
-                    width="560"
-                    height="315"
+                    width="100%"
+                    height="260"
                     :lazy-src="projects[selectedProject].youtubeURL"
                     :src="projects[selectedProject].youtubeURL"
                     frameborder="0"
@@ -66,7 +66,7 @@
                   ></iframe>
                 </v-responsive>
               </v-col>
-              <v-col>
+              <v-col sm="12" md="6" lg="6" cols="12">
                 <!-- <h3>Title</h3>
                 <p>{{ projects[selectedProject].title }}</p> -->
                 <h3>Technologies Used</h3>
@@ -116,18 +116,21 @@ export default {
       selectedProject: 0,
       projects: [
         {
-          image: '/img/youtube-reagan.png',
+          image: './img/youtube-reagan.png',
           title: 'Youtube Clone',
           technologies:
             'HTML, CSS, VueJS, VuetifyJS, NodeJS & MongoDB (MEVN Stack)',
           description:
             "I called it VueTube, the user interface (UI) is exactly like YouTube with features like subscriptions, upload videos (likes and dislike videos),comment & reply for videos, upload thumbnail etc. I don't have the project hosted, but I have the template preview, check below. For more, checkout the github repositories",
           youtubeURL: 'https://www.youtube.com/embed/CDAy3Z1N6-w',
-          githubURL: 'https://github.com/techreagan',
-          link: { text: 'Template Preview', value: 'https://techreagan.com' },
+          githubURL: 'https://github.com/techreagan/youtube-clone-nodejs-api',
+          link: {
+            text: 'Template Preview',
+            value: 'https://vuetube-clone.netlify.app/',
+          },
         },
         {
-          image: '/img/attendance-and-continous-assessment-mgt-system.png',
+          image: './img/attendance-and-continous-assessment-mgt-system.png',
           title: 'Attendance & Continous Assessment Management System',
           technologies:
             'HTML, CSS, VueJS, Bootstrap, NodeJS & MongoDB (MEVN Stack)',
@@ -138,33 +141,36 @@ export default {
           link: null,
         },
         {
-          image: '/img/online-examination.png',
+          image: './img/online-examination.png',
           title: 'Online Examination System',
           technologies: 'HTML, CSS, JavaScript, NodeJS & MongoDB',
           description:
             "An online examination management system where you can create questions for courses in different classes in the admin panel, while student takes the exam in the student panel as long as the countdown hasn't elapse ",
-          youtubeURL: 'https://www.youtube.com/embed/is2ZyZsI3ZM',
+          youtubeURL: 'https://www.youtube.com/embed/nt2qIaV2nuo',
           githubURL: null,
           link: null,
         },
         {
-          image: '/img/blog-app.png',
+          image: './img/blog-app.png',
           title: 'Blog App',
           technologies:
             'HTML, CSS, VueJS, VuetifyJS, NuxtJs, NodeJS & MongoDB (MEVN Stack)',
           description:
             'A server rendered application built with nuxtjs, This blog has admin panel with authentication, fetch, create, edit and delete post in the admin panel',
-          youtubeURL: 'https://www.youtube.com/embed/is2ZyZsI3ZM',
-          githubURL: 'https://github.com/techreagan',
-          link: 'https://techreagan.com',
+          youtubeURL: 'https://www.youtube.com/embed/EMZhZP1XM08',
+          githubURL: 'https://github.com/techreagan/nuxt-blog-template',
+          link: {
+            text: 'Template Preview',
+            value: 'https://nuxt-blog-template.netlify.app/',
+          },
         },
         {
-          image: '/img/swap-gadgets.png',
+          image: './img/swap-gadgets.png',
           title: 'Swap Gadgets',
           technologies: 'HTML, CSS, JavaScript, MaterializeCSS, PHP & MySQL',
           description:
             'An online platform where you could easily swap phones, tablets, electronics, laptop, video games, cameras and more.',
-          youtubeURL: 'https://www.youtube.com/embed/is2ZyZsI3ZM',
+          youtubeURL: 'https://www.youtube.com/embed/P6Zj55DO4dQ',
           githubURL: null,
           link: { text: 'Live Preview', value: 'https://swapgadgets.com' },
         },
@@ -172,8 +178,9 @@ export default {
     }
   },
   methods: {
-    hello() {
-      alert('hello0')
+    openDialog(key) {
+      this.dialog = !this.dialog
+      this.selectedProject = key
     },
   },
 }

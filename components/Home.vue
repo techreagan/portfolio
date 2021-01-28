@@ -11,17 +11,29 @@
         lg="7"
         class="align-self-center"
       >
-        <p class="mb-0 text--primary">Hello</p>
+        <p class="mb-0 text--primary">Hello,</p>
         <h1 class="my-1 display-1 font-weight-bold">
           I'm
           <span class="text--primary">Reagan Ekhameye (Tech Reagan)</span>
         </h1>
         <p>
-          A world class full stack software and network engineer, passionate
-          about changing the world by solving small and large scale problems.<br />
-          I specialize in backend development
+          A world class full stack software and network engineer; passionate
+          about changing the world by solving problems.
         </p>
-        <v-btn class="primary black--text" small>Hire Me</v-btn>
+        <client-only>
+          <scrollactive
+            active-class="is-active"
+            bezier-easing-value=".5,2,.35,1"
+          >
+            <v-btn
+              class="primary black--text scrollactive-item"
+              href="#contact"
+              nuxt
+              small
+              >Hire Me</v-btn
+            >
+          </scrollactive>
+        </client-only>
         <section class="mt-15">
           <v-btn
             v-for="social in socialLinks"
@@ -47,11 +59,13 @@
         md="5"
         lg="5"
       >
-        <div class="">
+        <div
+          class="rounded-circle overflow-hidden ma-auto"
+          style="max-width: 250px"
+        >
           <v-img
-            src="/img/1.jpg"
-            aspect-ratio="1.3"
-            contain
+            src="./img/techreagan-profile-pics.jpg"
+            alt="Tech Reagan's Avatar"
             max-height="300"
           ></v-img>
         </div>

@@ -11,6 +11,8 @@
           xs="12"
           sm="6"
           md="4"
+          data-aos="flip-right"
+          :data-aos-delay="`${50 * key}`"
         >
           <v-card class="secondary text-center">
             <v-icon class="py-5">{{ skill.icon }}</v-icon>

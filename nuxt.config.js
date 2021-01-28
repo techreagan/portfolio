@@ -6,16 +6,90 @@ export default {
 
   // Global page headers (https://go.nuxtjs.dev/config-head)
   head: {
-    titleTemplate: '%s - portfolio',
-    title: 'portfolio',
+    // titleTemplate: '%s - portfolio',
+    titleTemplate: 'Tech Reagan - Full Stack Software Engineer',
+    title: 'Tech Reagan - Full Stack Software Engineer',
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-      { hid: 'description', name: 'description', content: '' },
+      {
+        hid: 'title',
+        name: 'title',
+        content: 'Tech Reagan - Full Stack Software Engineer',
+      },
+      {
+        hid: 'description',
+        name: 'description',
+        content:
+          'A world class full stack software and network engineer (CCNA); passionate about changing the world by solving problems.',
+      },
+      { hid: 'og:type', property: 'og:type', content: 'website' },
+      { hid: 'og:url', property: 'og:url', content: 'https://techreagan.com' },
+      {
+        hid: 'og:title',
+        property: 'og:title',
+        content: 'Tech Reagan - Full Stack Software Engineer',
+      },
+      {
+        hid: 'og:description',
+        property: 'og:description',
+        content:
+          'A world class full stack software and network engineer (CCNA); passionate about changing the world by solving problems.',
+      },
+      {
+        hid: 'og:image',
+        property: 'og:image',
+        content: 'https://techreagan/img/tech-reagan-logo.jpg',
+      },
+      {
+        hid: 'twitter:card',
+        property: 'twitter:card',
+        content: 'summary_large_image',
+      },
+      { hid: 'twitter:site', property: 'twitter:site', content: '@techreagan' },
+      {
+        hid: 'twitter:url',
+        property: 'twitter:url',
+        content: 'https://techreagan.com',
+      },
+      {
+        hid: 'twitter:title',
+        property: 'twitter:title',
+        content: 'Tech Reagan - Full Stack Software Engineer',
+      },
+      {
+        hid: 'twitter:description',
+        property: 'twitter:description',
+        content:
+          'A world class full stack software and network engineer (CCNA); passionate about changing the world by solving problems.',
+      },
+      {
+        hid: 'twitter:image',
+        property: 'twitter:image',
+        content: 'https://techreagan/img/tech-reagan-logo.jpg',
+      },
     ],
     link: [
-      { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
+      {
+        rel: 'apple-touch-icon',
+        sizes: '180x180',
+        href: '/apple-touch-icon.png',
+      },
+      {
+        rel: 'icon',
+        type: 'image/png',
+        sizes: '32x32',
+        href: '/favicon-32x32.png',
+      },
+      {
+        rel: 'icon',
+        type: 'image/png',
+        sizes: '16x16',
+        href: '/favicon-16x16.png',
+      },
+      { rel: 'manifest', href: '/site.webmanifest' },
       { rel: 'preconnect', href: 'https://fonts.gstatic.com' },
+      { rel: 'canonical', href: 'https://techreagan.com' },
       {
         href:
           'https://fonts.googleapis.com/css2?family=Poppins:wght@400;500&display=swap',
@@ -33,7 +107,10 @@ export default {
   css: [],
 
   // Plugins to run before rendering page (https://go.nuxtjs.dev/config-plugins)
-  plugins: [{ src: '~/plugins/vue-scrollactive.js', mode: 'client' }],
+  plugins: [
+    { src: '~/plugins/vue-scrollactive.js', mode: 'client' },
+    { src: '~/plugins/aos.js', mode: 'client' },
+  ],
 
   // Auto import components (https://go.nuxtjs.dev/config-components)
   components: true,
