@@ -20,20 +20,15 @@
           A world class full stack software and network engineer; passionate
           about changing the world by solving problems.
         </p>
-        <client-only>
-          <scrollactive
-            active-class="is-active"
-            bezier-easing-value=".5,2,.35,1"
-          >
-            <v-btn
-              class="primary black--text scrollactive-item"
-              href="#contact"
-              nuxt
-              small
-              >Hire Me</v-btn
-            >
-          </scrollactive>
-        </client-only>
+
+        <v-btn
+          href="mailto:techreagan2@gmail.com"
+          class="primary black--text scrollactive-item"
+          nuxt
+          small
+          >Hire Me</v-btn
+        >
+
         <section class="mt-15">
           <v-btn
             v-for="social in socialLinks"

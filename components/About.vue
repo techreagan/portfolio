@@ -27,8 +27,8 @@
             I'm Reagan Ekhameye a.k.a Tech Reagan. A full stack developer
             though, I specialize in backend development. I have three(3) years
             of experience in the field. I have my first degree in Economics, but
-            my zeal for coding made me get a second degree in Communication &
-            Information Technology (CIT). I'm a network engineer with a CCNA
+            my zeal for coding made me acquired a second degree in Communication
+            & Information Technology (CIT). I'm a network engineer with a CCNA
             (Cisco Certified network Associate)
           </p>
 
